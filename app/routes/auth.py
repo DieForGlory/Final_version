@@ -22,7 +22,7 @@ def login():
 
         user = user_service.get_user_by_username(username)
 
-        if user and user_service.check_password(user, password):
+        if user and user.check_password(password):
             login_user(user, remember=remember)
 
             # --- ИЗМЕНЕНИЕ: Обновляем last_login ---
